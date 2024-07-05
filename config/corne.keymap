@@ -11,19 +11,7 @@
 &led_strip { chain-length = <27>; };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        pwr_off_L {
-            bindings = <&soft_off>;
-            key-positions = <0 5 38>;
-        };
-
-        pwr_off_R {
-            bindings = <&soft_off>;
-            key-positions = <6 11 39>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
