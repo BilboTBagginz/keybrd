@@ -17,9 +17,6 @@
         pwr_off_L {
             bindings = <&soft_off>;
             key-positions = <0 5 38>;
-            timeout-ms = <200>;
-            layers = <2>;
-            slow-release;
         };
 
         pwr_off_R {
