@@ -17,11 +17,15 @@
         pwr_dwn_L {
             bindings = <&soft_off>;
             key-positions = <5 38 0>;
+            layers = <0>;
+            timeout-ms = <100>;
         };
 
         pwr_dwn_R {
             bindings = <&soft_off>;
             key-positions = <6 11 39>;
+            layers = <0>;
+            timeout-ms = <100>;
         };
     };
 
