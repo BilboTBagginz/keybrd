@@ -10,6 +10,12 @@
 
 &led_strip { chain-length = <27>; };
 
+&soft_off {
+    hold-time-ms = <100>;
+
+    /delete-property/ split-peripheral-off-on-press;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -27,6 +33,15 @@
         pwr_off_R {
             bindings = <&soft_off>;
             key-positions = <39 6 11>;
+        };
+    };
+
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&soft_off &kp TAB &kp SPACE &kp R>;
+            label = "NEW_MACRO";
         };
     };
 
