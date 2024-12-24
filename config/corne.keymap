@@ -11,7 +11,24 @@
 &led_strip { chain-length = <27>; };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        Layer_3 {
+            bindings = <&kp N3>;
+            key-positions = <37 40>;
+        };
+
+        pwr_off_L {
+            bindings = <&soft_off>;
+            key-positions = <0 5 38>;
+        };
+
+        pwr_off_R {
+            bindings = <&soft_off>;
+            key-positions = <39 6 11>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -39,10 +56,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8        &kp N9  &kp N0  &kp BSPC
-&kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &kp UP    &trans        &trans  &trans  &trans
-&bt BT_CLR  &trans        &trans        &trans        &trans        &trans          &kp LEFT  &kp DOWN  &kp RIGHT     &trans  &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp LEFT_GUI
+&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6   &kp N7    &kp N8        &kp N9     &kp N0  &kp BSPC
+&kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans   &trans    &kp UP_ARROW  &trans     &trans  &trans
+&bt BT_CLR  &trans        &trans        &trans        &trans        &trans          &trans   &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans
+                                        &kp LGUI      &trans        &kp SPACE       &kp RET  &trans    &kp LEFT_GUI
             >;
         };
 
@@ -58,6 +75,15 @@
 &kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
                              &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6   &kp N7    &kp N8        &kp N9     &kp N0  &kp BSPC
+&kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans   &trans    &kp UP_ARROW  &trans     &trans  &trans
+&bt BT_CLR  &kp T         &trans        &trans        &trans        &trans          &trans   &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans
+                                        &kp LGUI      &trans        &kp SPACE       &kp RET  &trans    &kp LEFT_GUI
             >;
         };
     };
